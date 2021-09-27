@@ -39,6 +39,7 @@ export default function StoryLayout() {
 
     return (
         <div className={ "story-layout "+ (switchMiniStory && "fixed-stories")}>
+
             <div className="story-container"> 
                 {stories.map((story,index)=>{
                     return(    
@@ -53,6 +54,7 @@ export default function StoryLayout() {
                     isMini={switchMiniStory}
                 />
             </div>
+
             <style jsx>{`
 
                 .story-layout{
@@ -68,12 +70,10 @@ export default function StoryLayout() {
                     max-width: 90%;
                     display: flex;
                     align-items: center;
-                    justify-content: flex-start;   
-                }
-                @media screen and (max-width: 1335px) {
-                    .story-layout .story-container{
+                    justify-content: flex-start;  
                         overflow-x: scroll;
-                    }
+                        -webkit-overflow-scrolling: touch;
+                    
                 }
             
                 .story-layout .story-container::-webkit-scrollbar {
@@ -82,8 +82,7 @@ export default function StoryLayout() {
 
                 .fixed-stories{
                     position: fixed;
-                    z-index: 1;
-                    top: -25px;
+                    top: -22px;
                     left: 0;
 
                 }

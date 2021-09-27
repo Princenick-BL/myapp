@@ -5,6 +5,8 @@ import Image from 'next/image'
 export default function Header() {
     
     const [largeur,setLargeur]=useState()
+    const [showSubMenu1,setShowSubmenu1]=useState(false)
+    //const [showSubMenu2,setShowSubmenu2]=useState(false)
     
     useEffect(()=>{
         
@@ -28,22 +30,36 @@ export default function Header() {
    return (
        <div className="Header">
                 <>
+                    {largeur < 900 &&
                         <nav className="mobile-menu">
                             <div className="navicon">
                                 <div></div>
                             </div>
-                        
-                            <a>This was</a>
-                            <a>Made using</a>
-                            <a>The clip-path property</a>
-                            <a>Transition in</a>
-                            <a>CSS only</a>
-                        
-                        </nav>
-                    {/* {largeur < 1150 &&
                             
-                           
-                    } */}
+                            <ul>
+                                <li><a href="#0">{"Actualité"}</a></li>
+                                    <li>
+                                    <a href="#0" onClick={()=>{setShowSubmenu1(!showSubMenu1)}}>{"Tech"}</a>
+                                    {showSubMenu1 &&
+                                        <ul>
+                                            <li><a href="#0">Android</a></li>
+                                            <li><a href="#0">Apple</a></li>
+                                            <li><a href="#0">Window</a></li>
+                                        </ul>
+
+                                    }
+                                    </li>
+                                    <li><a href="#0">Crypto</a></li>
+
+                                    <li>
+                                    <a href="#0">{"Start With"}</a>
+                                   
+                                </li>
+
+                            </ul>
+                        
+                        </nav>            
+                    }
                     <div className="header-logo">
                         
                         <div className="header-logo-img">
@@ -53,7 +69,7 @@ export default function Header() {
                             <div className="header-logo-text-top">
                                 LA TOTALE
                             </div>
-                            <div className="header-logo-text-bottom">by Nick's Corp</div>
+                            <div className="header-logo-text-bottom">{"by Nick's Corp"}</div>
                         </div>
                     </div>
                     {largeur > 900 &&
@@ -61,25 +77,18 @@ export default function Header() {
                         <div>
                             <nav className="menu">
                                 <ul>
-                                    <li><a href="#0">Home</a></li>
-                                    <li><a href="#0">About</a></li>
+                                    <li><a href="#0">{"Actualité"}</a></li>
                                     <li>
-                                    <a href="#0">Clients</a>
+                                    <a href="#0">{"Tech"}</a>
                                     <ul>
-                                        <li><a href="#0">Burger King</a></li>
-                                        <li><a href="#0">Southwest Airlines</a></li>
-                                        <li><a href="#0">Levi Strauss</a></li>
+                                        <li><a href="#0">Android</a></li>
+                                        <li><a href="#0">Apple</a></li>
+                                        <li><a href="#0">Windows</a></li>
                                     </ul>
                                     </li>
-                                    <li>
-                                    <a href="#0">Services</a>
-                                    <ul>
-                                        <li><a href="#0">Print Design</a></li>
-                                        <li><a href="#0">Web Design</a></li>
-                                        <li><a href="#0">Mobile App Development</a></li>
-                                    </ul>
-                                    </li>
-                                    <li><a href="#0">Contact</a></li>
+                                    <li><a href="#0">Crypto</a></li>
+
+                                    <li><a href="#0">{"Start With"}</a></li>
                                 </ul>
                             </nav>
                         </div>

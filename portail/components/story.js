@@ -31,9 +31,12 @@ export class Story extends Component {
                         border-radius: 30px;
                         stroke: 0.5em blue;
                     }
-                    .story:hover{
-                        transform: scale(1.1);
-                    }    
+                    @media screen and (min-width: 900px) {
+                        .story:hover{
+                            transform: scale(1.1);
+                        }  
+                    }
+                      
                     .story-isMini{
                         width: 50px;
                         height: 50px;
@@ -69,11 +72,15 @@ export class MoreStory extends Component {
                         cursor: pointer;                    
                     }
                     
-                    .story:hover{
-                        transform: scale(1.1);
-                    } 
+                    @media screen and (min-width: 900px) {
+                        .story:hover{
+                            transform: scale(1.1);
+                        }  
+                    }
                     .more-story{
-                        background-color: rgb(127, 127, 233);    
+                        background: rgb(74,255,0);
+                        background-color: #8BC6EC;
+                        background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
                     }   
                     .more-story-text{
                         height: calc( 100% - 50px );
